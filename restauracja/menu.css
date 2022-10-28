@@ -1,0 +1,111 @@
+:root{
+    --main-color: rgb(80, 80, 80);
+    --second-color: rgb(165, 125, 92); 
+    --font-size: 1.5em;
+}
+*{
+    font-family: 'Roboto Flex', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: var(--main-color);
+}
+nav{
+    background-color: var(--main-color);
+    display: flex;
+    flex-direction: row;
+    border-bottom: 2px solid var(--second-color);
+}
+nav>div>a{
+    text-decoration: none;
+    color: white;
+}
+nav:first-child{
+    padding-top: .5em;
+    padding-left: .5em;
+    padding-bottom: .5em;
+}
+nav :nth-child(2), nav :nth-child(3), nav :nth-child(3), nav :nth-child(4){
+    flex-basis: 25%;
+    display: grid;
+    place-content: center;
+    font-size: var(--font-size);
+}
+nav :nth-child(2)>a:hover, nav :nth-child(3)>a:hover, nav :nth-child(3)>a:hover, nav :nth-child(4)>a:hover{
+    color: var(--second-color);
+}
+main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: var(--main-color);
+}
+.position-container{
+    flex-basis: 45%;
+    background-color: var(--main-color);
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: .25em;
+}
+.position-img{
+    flex-basis: 50%;
+    overflow: hidden;
+}
+.position-img>img{
+    transition: all 1s linear;
+}
+.position-img:hover>img{
+    transform: scale(1.2) rotate(10deg);
+}
+.category-text{
+    background-color: white;
+    flex-basis: 47.5%;
+    padding-top: 10%;
+    padding-left: 1em;
+}
+.category-text>p{
+    font-size: 1.5em;
+    color: var(--second-color);
+    margin-bottom: .5em;
+}
+.active{
+    color: var(--second-color);
+}
+.category-choose>select>option{
+   font-size: 1em;
+}
+.category-choose>select{
+    min-width: 20%;
+    height: 3vh;
+    font-size: 1em;
+    border: 1px solid var(--main-color);
+}
+@media (max-width: 1100px){
+    nav>div>img{
+        content:url("logoMobile.png");
+    }
+    :root{
+        --font-size: 1em;
+    }
+    .category-text{
+        font-size: .65em;
+        padding-top: 0;
+    }
+    .category-text>p{
+        font-size: 1.2em;
+    }
+    .position-img{
+        content:url("positionimgMobile.jpg");
+    }
+    .category-choose>select{
+        font-size: .7em;
+    }
+    .position-img>img{
+        transition: none;
+    }
+}

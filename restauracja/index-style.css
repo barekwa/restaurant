@@ -1,0 +1,151 @@
+:root{
+    --main-color: rgb(80, 80, 80);
+    --second-color: rgb(165, 125, 92); 
+    --font-size: 1.5em;
+}
+*{
+    font-family: 'Roboto Flex', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+nav{
+    background-color: var(--main-color);
+    display: flex;
+    flex-direction: row;
+}
+nav>div>a{
+    text-decoration: none;
+    color: white;
+}
+nav:first-child{
+    padding-top: .5em;
+    padding-left: .5em;
+    padding-bottom: .5em;
+}
+nav :nth-child(2), nav :nth-child(3), nav :nth-child(3), nav :nth-child(4){
+    flex-basis: 25%;
+    display: grid;
+    place-content: center;
+    font-size: var(--font-size);
+}
+nav :nth-child(2)>a:hover, nav :nth-child(3)>a:hover, nav :nth-child(3)>a:hover, nav :nth-child(4)>a:hover{
+    color: var(--second-color);
+}
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--main-color);
+}
+header{
+    background-image: url("header.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40vh;
+    font-size: calc(var(--font-size)*2);
+    color: white;
+    width: 100%;
+}
+header>div{
+    position: relative;
+    margin-left: 50%;
+}
+header>div>button{
+    height: calc(var(--font-size)*2);
+    padding: .5em;
+    background-color: transparent;
+    border: 2px solid var(--second-color);
+    font-size: .3em;
+    border-radius: 12px;
+    color: white;
+}
+header>div>button:hover>a{
+    color: var(--second-color);
+}
+header>div>button:hover{
+    background-color: white;
+}
+header>div>button>a{
+    text-decoration: none;
+    color: white;
+}
+.aboutus{
+    background-color: white;
+    padding: 5% 10% 5% 20%;
+    display: flex;
+    flex-direction: row;
+}
+.aboutus>div:nth-of-type(2){
+    padding-left: 2.5%;
+    flex-basis: 30%;
+}
+.aboutus>div>p{
+    display: grid;
+    place-content: center;
+    color: var(--second-color);
+    font-size: var(--font-size);
+}
+.menu{
+    text-align: center;
+    font-size: 2em;
+    color: var(--second-color);
+    padding-top: .5em;
+}
+.wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.positions, .category{
+    text-align: center;
+    flex-basis: 100%;
+    font-size: calc(var(--font-size)*0.5);
+    color: white;
+    display: grid;
+    place-content: center;
+    min-height: 40vh;
+}
+.positions{
+    border-right: 1px solid var(--second-color);
+}
+.category{
+    border-right: 1px solid var(--second-color);
+}
+.category>ul>li:hover{
+    cursor: pointer;
+}
+.active{
+    color: var(--second-color);
+}
+.positions>ul, .category > ul{
+    list-style: none;
+}
+footer{
+    background-color: white;
+    min-height: 5vh;
+    line-height: 5vh;
+    padding-left: 1.5em;
+}
+@media (max-width: 1000px){
+    .aboutus{
+        display: grid;
+        place-content: center;
+    }
+    .aboutus>div>img{
+        content:url("dinnerMobile.jpg");
+    }
+    nav>div>img{
+        content:url("logoMobile.png");
+    }
+    :root{
+        --font-size: 1em;
+    }
+    header{
+        background-image: url("headerMobile.jpg");
+        height: 25vh;
+    }
+    footer, nav{
+        font-size: .7em;
+    }
+}

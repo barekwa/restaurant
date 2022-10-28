@@ -1,0 +1,27 @@
+:root{
+    --second-color: rgb(165, 125, 92); 
+    --font-size: 2em;
+}
+div{
+    display: grid;
+    place-content: center;
+    padding-top: 1.75em;
+    font-size: var(--font-size);
+    color: var(--second-color);
+    font-family: 'Roboto Flex', sans-serif;
+}
+.home{
+    position: absolute;
+    right: 10%;
+    bottom: 10%;
+   /*  font-size: .5em; */
+    border-radius: 12px;
+}
+.home>a{
+    text-decoration: none;
+    color: var(--second-color);
+}
+.home:hover>a{
+    text-decoration: none;
+    color: white;
+}
