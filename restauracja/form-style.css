@@ -48,13 +48,17 @@ button:hover{
 .home{
     position: absolute;
     right: 10%;
-    bottom: 10%;
+    bottom: 0%;
     font-size: .5em;
     border-radius: 12px;
+    border: solid 1px red;
 }
 .home>a{
     text-decoration: none;
     color: var(--second-color);
+}
+.home:hover{
+    background-color: var(--main-color);
 }
 .home:hover>a{
     text-decoration: none;

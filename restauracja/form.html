@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="form-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <form>
+            <div class="name">
+                <label for="name">Your Name</label><br>
+                <input type="text" id="name" name="name" placeholder="Name and surname" pattern=[A-Z\sa-z]{3,20} required>
+            </div>
+            <div class="phone">
+                <label for="phone">Your Phone</label><br>
+                <input type="tel" id="phone" name="phone" placeholder="999999999" pattern=(\d{9}) required>
+            </div>
+            <div class="date">
+                <label for="date">Select date</label><br>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="additional-info">
+                <label for="additional-info">Anything Else?</label><br>
+                    <textarea id="additional-info" name="additional-info" placeholder="Tell us anything else that might be important."></textarea>
+            </div>
+            <div class="button">
+                <button type="submit">Confirm</button>
+            </div>
+            <div class="home"><a href="index.html">Home</a></div>
+        </form>
+        <script src="form.js"></script>
+    </div>
+</body>
+</html>
