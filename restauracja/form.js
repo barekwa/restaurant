@@ -28,7 +28,11 @@ document.querySelector("form").addEventListener("submit", (event) => {
                 else{
                 document.querySelector(".wrapper").innerHTML = `
                     <p>Confirmation of reservation for ${data[0]['name']}<br> for the day ${data[0]['date']}</p>
+                    <p>You will be redirected to a home page in a moment</p>
                 `;
+                setTimeout(()=>{
+                    window.location.href = 'index.html';
+                }, 3000)
                 }
             })
         }

@@ -28,7 +28,7 @@ button {
     cursor: pointer;
   }
 button:hover{
-    background: var(--second-color);
+    background-color: var(--second-color);
     color: white;
 }
 #phone, #date, #name, #additional-info{
@@ -48,17 +48,18 @@ button:hover{
 .home{
     position: absolute;
     right: 10%;
-    bottom: 0%;
-    font-size: .5em;
+    bottom: 2%;
+    font-size: .55em;
     border-radius: 12px;
-    border: solid 1px red;
+    border: solid 1px var(--second-color);
+    padding: .25em;
 }
 .home>a{
     text-decoration: none;
     color: var(--second-color);
 }
 .home:hover{
-    background-color: var(--main-color);
+    background-color: var(--second-color);
 }
 .home:hover>a{
     text-decoration: none;
