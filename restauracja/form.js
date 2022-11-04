@@ -12,25 +12,32 @@ document.querySelector("form").addEventListener("submit", (event) => {
         additionalInfo: additionalInfo
     })
     event.preventDefault();
-    xml = new XMLHttpRequest();
-    xml.onload = () => {
-        if(xml.status === 200){
-            if(xml.responseText==="err"){
-                alert("Wybrany termin jest zajęty");
-            }
-            else{
-                const res = JSON.parse(xml.responseText);
+    let url = "http://localhost/restauracja/booking.php";
+    fetch(url,{
+        method: "POST",
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
+          },
+        body: data
+    }).then(Response => {
+        if(Response.status === 200){
+            Response.json().then(data=>{
+                console.log(data);
+                if(data[0]["err"]=="true")
+                    alert("Wybrany termin jest zajęty");
+                else{
                 document.querySelector(".wrapper").innerHTML = `
-                    <p>Confirmation of reservation for ${res[0]['name']}<br> for the day ${res[0]['date']}</p>
+                    <p>Confirmation of reservation for ${data[0]['name']}<br> for the day ${data[0]['date']}</p>
                 `;
-            }
+                }
+            })
         }
         else{
-            alert("Błąd połączenia z bazą danych");
+            throw Error;
         }
-    };
-    xml.open("POST","booking.php", true);
-    xml.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xml.getResponseHeader("Content-Type","application/json");
-    xml.send(`data=${data}`);
+    })
+    .catch(err=>{
+        alert("Błąd połączenia z bazą");
+        console.log(err);
+    })
 });
